@@ -34,3 +34,9 @@ def Infix2Postfix(expr):
 
 
     return output
+
+
+infix1 = ['8', '/', '2', '-', '3', '+', '(', '3', '*', '2', ')']
+postfix1 = Infix2Postfix(infix1)
+print(infix1)
+print(postfix1)

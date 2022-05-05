@@ -32,3 +32,15 @@ class Queue:
             walk = (walk +1)%len(olditems)
         self.front = -1
         self.rear = self.size-1
+
+
+q = Queue()
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+e = q.dequeue()
+print(e)
+print(q.dequeue())
+print(q.dequeue())
+q.enqueue(40)
+print(q.dequeue())

@@ -12,3 +12,13 @@ class LinkedQueue:
         else:
             self.rear.link = newNode
             self.rear = newNode
+            
+    def dequeue(self):
+        if self.isEmpty():
+            print("Queue is Empty")
+            return None
+        e = self.front.data
+        self.front = self.front.link
+        if self.front == None:
+            self.rear = None
+        return e

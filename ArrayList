@@ -12,3 +12,16 @@ class ArrayList:
             return None
         else:
             self.items.insert(pos,e)
+    def delete(self,pos):
+        if pos <0 or pos >=self.size():
+            print("위치 error")
+            return None
+        else:
+            return self.items.pop(pos)
+        
+    def getEntry(self,pos):
+        if pos <0 or pos >=self.size():
+            print("위치 error")
+            return None
+        else:
+            return self.items[pos]

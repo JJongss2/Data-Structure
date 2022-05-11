@@ -25,3 +25,12 @@ class ArrayList:
             return None
         else:
             return self.items[pos]
+    def clear(self):
+        self.items = []
+        
+    def replace(self, pos, e):
+        if pos < 0 or pos >=self.size():
+            print("위치 error")
+            return None
+        else:
+            self.items[pos] = e

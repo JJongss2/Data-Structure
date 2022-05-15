@@ -17,3 +17,16 @@ class LinkedList:
             pos-=1
             node = node.link
         return node
+        
+    def getEntry(self, pos):
+        node = self.getNode(pos)
+        if node == None:return None
+        else:return node.data
+
+    def size(self):
+        count = 0
+        current = self.head
+        while current != None:
+            count+=1
+            current = current.link
+        return count

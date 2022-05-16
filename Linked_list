@@ -30,3 +30,22 @@ class LinkedList:
             count+=1
             current = current.link
         return count
+        
+    def nodeCount(self, node):
+        if node == None:
+            return 0
+        else:
+            return self.nodeCount(node.link)+1
+
+    def insert(self, pos, e):
+        if pos < 0 or pos > self.size():
+            print("위치 error")
+            return None
+        node = Node(e)
+        before = self.getNode(pos-1)
+        if before == None:
+            node.link = self.head
+            self.head = node
+        else:
+            node.link = before.link
+            before.link = node

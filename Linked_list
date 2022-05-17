@@ -49,3 +49,22 @@ class LinkedList:
         else:
             node.link = before.link
             before.link = node
+            
+    def delete(self, pos):
+        if pos < 0 or pos >= self.size():
+            print("위치 error")
+            return None
+        before = self.getNode(pos-1)
+        if before == None:
+            e = self.head.data
+            self.head = self.head.link
+        else:
+            e = before.link.data
+            before.link= before.link.link
+        return e
+
+    def printList(self):
+        node = self.head
+        while node != None:
+            print(node.data)
+            node = node.link

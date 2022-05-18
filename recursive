@@ -1,0 +1,22 @@
+def fact(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fact(n-1)
+
+
+def gcd(a, b):                 # 로그max(a,b)
+    if(a%b == 0):
+        return b
+    if b == 0:
+        return a
+    else:
+        return gcd(b,a%b)
+
+def gcd(a,b):
+    if(a%b)==0:
+        return b
+    if b == 0:
+        return a
+    else:
+        return gcd(b,a%b)

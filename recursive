@@ -48,3 +48,17 @@ def exp4(x, n):
         return exp4(x*x,n/2)
     else:
         return x*exp4(x*x,(n-1)/2)  # x * (x2) (n-1)/2
+        
+def binarySearch(A, left,right, item):  # 로그n
+    if left <= right:
+        mid = (left + right) // 2
+
+    if item == A[mid]:
+        return mid
+    elif item < A[mid]:
+        return binarySearch(A,left,mid-1, item)
+    elif item > A[mid]:
+        return binarySearch(A, mid+1, right, item)
+
+    else:
+        return -1

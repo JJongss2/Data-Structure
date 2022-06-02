@@ -7,3 +7,32 @@ class TNode:
 class BinaryTree:
   def __init__(self):
     self.root = None
+  
+  def preorder(self):
+    self._subtreePreorder(self.root)
+  
+  def _subtreePreorder(self, p):
+    if p is not None:
+      print(p.data)
+      self._subtreePreorder(p.left)
+      self._subtreePreorder(p.right)
+  
+  def inorder(self):
+    self._subtreeInorder(self.root)
+  
+  def _subtreeInorder(self,p):
+    if p is not None:
+      self._subtreeInorder(p.left)
+      print(p.data)
+      self._subtreeInorder(p.right)
+  
+  def postorder(self):
+    self._subtreePostorder(self.root)
+  
+  def _subtreePostorder(self, p):
+    if p is not None:
+      self._subtreePostorder(p.left)
+      self._subtreePostorder(p.right)
+      print(p.data)
+      
+      

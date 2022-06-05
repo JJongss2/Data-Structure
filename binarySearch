@@ -1,0 +1,30 @@
+def binarySearch(a, key):
+    left = 0
+    right = len(a)-1
+
+    while left <=right:
+        mid = (left+right)//2
+        print(a[mid])
+        if key == a[mid]:
+            return True
+        elif key < a[mid]:
+            right = mid -1
+        else:
+            left = mid +1
+    return False
+
+def binarySearch1(a,key,left,right):                    # 수행시간 로그n
+    if left >right :
+        return False
+
+    else:
+        mid = (left +right)//2
+        print(a[mid])
+        if key == a[mid] :
+            return True
+
+        elif key < a[mid]:
+            return binarySearch1(a,key,left,mid-1)
+
+        else:
+            return binarySearch1(a,key,mid+1,right)

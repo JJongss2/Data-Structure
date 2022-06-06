@@ -1,0 +1,35 @@
+class TreeNode:
+    def __init__(self, key, value, left = None, right = None):
+        self.key = key
+        self.value = value
+        self.left = left
+        self.right = right
+
+
+class BST:
+    def __init__(self):
+        self.root = None
+
+    def search1(self, key):            # 수행시간 h(이진탐색트리 높이)
+        node = self.root
+        while node is not None:
+            if node.key == key:
+                return node.value
+            elif key < node.key:
+                node = node.left
+            else:
+                node = node.right
+        return None
+
+    def search2(self, key):
+        return self._searchBst(self.root, key)
+
+    def _searchSubtree(self, node, key):
+        if node is None:
+            return None
+        elif key == node.key:
+            return node.value
+        elif key <node.key:
+            return self._searchSubtree(node.left, key)
+        else:
+            return self._searchSubtree(node.right, key)
